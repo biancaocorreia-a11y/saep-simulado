@@ -1,0 +1,31 @@
+Requisitos funcionais
+Código
+
+Requisito
+
+RF01
+
+O sistema deve permitir cadastrar usuários com nome, e-mail único e senha protegida
+
+RF02
+
+O sistema deve permitir que usuários realizem login com e=mail e senha
+
+RF03
+
+O sistema deve permitir abrir e visualizar chamados vinculados a equipamentos cadastrados
+
+Requisito não funcional
+- RNF01: O sistema deve proteger as senhas utilizando o algoritmo password_hash() e realizar a verificação com password_verify().
+
+Regra de negócio 
+- RN01: Todo chamado deve possuir um equipamento existente, uma descrição, uma prioridade (Baixa, Média ou alta) e deve iniciar obrigatoriamente com o status "Aberto".
+
+Critério de aceitação - Abrir chamado
+Dado que o usuário esteja autenticado no sistema e exista pelo menos um equipamento cadastrado;
+
+Quando preencher a descrição, selecionar o equipamento e informar uma prioridade válida;
+
+Então o sistema deverá cadastrar o chamado no banco de dados, gerar seu número identificador, definir o status ocmo "Aberto" e exibi-lo no painel relacionado ao equipamento selecionado.
+
+Se o equipamento não existir ou os dados forem inválidos, o chamado não deverá ser cadastrado.
